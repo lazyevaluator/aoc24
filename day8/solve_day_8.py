@@ -26,6 +26,9 @@ for positions in antennas.values():
         antinodes_part1 = [(2*r1 - r2, 2*c1 - c2), (2*r2 - r1, 2*c2 - c1)]
 
         # this will generate all antinodes but potentially also many points outside the grid
+        # also this actually shouldn't work, but apparently in the input the distances
+        # r2 -r1 and c2 - c1 are coprime to each other. Usually you should consider all
+        # multiples of (r2-r1)/g and (c2-c1)/g where g = gcd(r2-r1, c2-c1)
         antinodes_part2 = [(r1 - k*(r2-r1), c1 - k*(c2-c1)) for k in range(-max(n,m), max(n,m))]
         for a in antinodes_part1:
             if inGrid(a):
