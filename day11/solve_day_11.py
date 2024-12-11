@@ -29,14 +29,13 @@ def blink_n(n, stones):
     for i in range(n):
         new_stones = blink(new_stones)
     return new_stones
-
-print(len(blink_n(25, data)))   
-
-# part 2
-# let f(n,m) denote the number of stones after blinking m times starting with only the single stone n
-# use memoization with dictionary where the keys are pairs (n,m)
+   
 
 """
+part 2
+let f(n,m) denote the number of stones after blinking m times starting with only the single stone n
+use memoization with dictionary where the keys are pairs (n,m)
+
 The recursive formula for f is 
 f(n,m) = { 
            1                                      if m = 0
